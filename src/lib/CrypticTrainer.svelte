@@ -2,30 +2,63 @@
   import { crypticClues } from './clues.js';
   
   let currentClueIndex = 0;
-  let userAnswer = '';
+  let userAnswer = [];
   let showAnswer = false;
   let showExplanation = false;
   let score = 0;
   let attempted = 0;
   let selectedDifficulty = 'all';
+  let revealedLetters = [];
+  let feedbackMessage = '';
+  let feedbackType = ''; // 'correct' or 'incorrect'
 
   $: currentClue = filteredClues[currentClueIndex];
   $: filteredClues = selectedDifficulty === 'all' 
     ? crypticClues 
     : crypticClues.filter(c => c.difficulty === selectedDifficulty);
+  $: answerLength = currentClue.answer.replace(/\s/g, '').length;
+  
+  // Initialize answer array when clue changes
+  $: if (currentClue) {
+    userAnswer = Array(answerLength).fill('');
+    revealedLetters = Array(answerLength).fill(false);
+  }
   
   function checkAnswer() {
-    const normalized = userAnswer.trim().toLowerCase().replace(/\s/g, '');
+    const userAnswerStr = userAnswer.join('').toLowerCase();
     const correctNormalized = currentClue.answer.toLowerCase().replace(/\s/g, '');
     
-    if (normalized === correctNormalized) {
+    if (userAnswerStr === correctNormalized) {
       score++;
       attempted++;
-      alert('✅ Correct! Well done!');
-      nextClue();
+      feedbackMessage = 'Correct! Well done! 🎉';
+      feedbackType = 'correct';
+      setTimeout(() => {
+        nextClue();
+      }, 1500);
     } else {
       attempted++;
-      alert('❌ Not quite right. Try again or reveal the answer!');
+      feedbackMessage = 'Not quite right. Try again or reveal the answer!';
+      feedbackType = 'incorrect';
+    }
+  }
+
+  function revealHint() {
+    const correctAnswer = currentClue.answer.replace(/\s/g, '');
+    const unrevealedIndices = [];
+    
+    // Find all unrevealed positions
+    for (let i = 0; i < answerLength; i++) {
+      if (!revealedLetters[i] && userAnswer[i] !== correctAnswer[i].toUpperCase()) {
+        unrevealedIndices.push(i);
+      }
+    }
+    
+    if (unrevealedIndices.length > 0) {
+      // Pick a random unrevealed position
+      const randomIndex = unrevealedIndices[Math.floor(Math.random() * unrevealedIndices.length)];
+      userAnswer[randomIndex] = correctAnswer[randomIndex].toUpperCase();
+      revealedLetters[randomIndex] = true;
     }
   }
 
@@ -39,30 +72,63 @@
 
   function nextClue() {
     currentClueIndex = (currentClueIndex + 1) % filteredClues.length;
-    userAnswer = '';
+    userAnswer = Array(answerLength).fill('');
+    revealedLetters = Array(answerLength).fill(false);
     showAnswer = false;
     showExplanation = false;
+    feedbackMessage = '';
+    feedbackType = '';
   }
 
   function previousClue() {
     currentClueIndex = (currentClueIndex - 1 + filteredClues.length) % filteredClues.length;
-    userAnswer = '';
+    userAnswer = Array(answerLength).fill('');
+    revealedLetters = Array(answerLength).fill(false);
     showAnswer = false;
     showExplanation = false;
+    feedbackMessage = '';
+    feedbackType = '';
   }
 
-  function handleKeyPress(event) {
-    if (event.key === 'Enter') {
+  function handleInput(index, event) {
+    const value = event.target.value.toUpperCase();
+    if (value.match(/^[A-Z]$/)) {
+      userAnswer[index] = value;
+      // Move to next box
+      if (index < answerLength - 1) {
+        const nextInput = event.target.nextElementSibling;
+        if (nextInput) nextInput.focus();
+      }
+    } else if (value === '') {
+      userAnswer[index] = '';
+    }
+  }
+
+  function handleKeyDown(index, event) {
+    if (event.key === 'Backspace' && userAnswer[index] === '' && index > 0) {
+      const prevInput = event.target.previousElementSibling;
+      if (prevInput) {
+        prevInput.focus();
+        userAnswer[index - 1] = '';
+      }
+    } else if (event.key === 'Enter') {
       checkAnswer();
+    } else if (event.key === 'ArrowLeft' && index > 0) {
+      event.target.previousElementSibling?.focus();
+    } else if (event.key === 'ArrowRight' && index < answerLength - 1) {
+      event.target.nextElementSibling?.focus();
     }
   }
 
   function changeDifficulty(difficulty) {
     selectedDifficulty = difficulty;
     currentClueIndex = 0;
-    userAnswer = '';
+    userAnswer = Array(answerLength).fill('');
+    revealedLetters = Array(answerLength).fill(false);
     showAnswer = false;
     showExplanation = false;
+    feedbackMessage = '';
+    feedbackType = '';
   }
 </script>
 
@@ -115,18 +181,35 @@
       ({currentClue.length})
     </div>
 
-    <div class="input-section">
-      <input 
-        type="text" 
-        bind:value={userAnswer}
-        on:keypress={handleKeyPress}
-        placeholder="Type your answer..."
-        disabled={showAnswer}
-      />
-      <button class="check-btn" on:click={checkAnswer} disabled={showAnswer || !userAnswer}>
+    <div class="letter-boxes">
+      {#each Array(answerLength) as _, i}
+        <input
+          type="text"
+          class="letter-box"
+          class:revealed={revealedLetters[i]}
+          maxlength="1"
+          bind:value={userAnswer[i]}
+          on:input={(e) => handleInput(i, e)}
+          on:keydown={(e) => handleKeyDown(i, e)}
+          disabled={showAnswer || revealedLetters[i]}
+        />
+      {/each}
+    </div>
+
+    <div class="action-row">
+      <button class="check-btn" on:click={checkAnswer} disabled={showAnswer}>
         Check Answer
       </button>
+      <button class="hint-btn" on:click={revealHint} disabled={showAnswer}>
+        💡 Reveal Letter
+      </button>
     </div>
+
+    {#if feedbackMessage}
+      <div class="feedback {feedbackType}">
+        {feedbackMessage}
+      </div>
+    {/if}
 
     {#if showAnswer}
       <div class="answer-reveal">
@@ -268,40 +351,64 @@
     margin-bottom: 1.5rem;
   }
 
-  .input-section {
+  .letter-boxes {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .letter-box {
+    width: 3rem;
+    height: 3rem;
+    padding: 0;
+    border: 3px solid #dee2e6;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: monospace;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.2s;
+  }
+
+  .letter-box:focus {
+    outline: none;
+    border-color: #667eea;
+    transform: scale(1.05);
+  }
+
+  .letter-box:disabled {
+    background: #e9ecef;
+    cursor: not-allowed;
+  }
+
+  .letter-box.revealed {
+    background: #fff3cd;
+    border-color: #ffc107;
+  }
+
+  .action-row {
     display: flex;
     gap: 0.75rem;
     margin-bottom: 1rem;
   }
 
-  input {
+  .check-btn,
+  .hint-btn {
     flex: 1;
-    padding: 0.75rem;
-    border: 2px solid #dee2e6;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-family: inherit;
-    text-transform: uppercase;
-  }
-
-  input:focus {
-    outline: none;
-    border-color: #667eea;
-  }
-
-  input:disabled {
-    background: #e9ecef;
-  }
-
-  .check-btn {
     padding: 0.75rem 1.5rem;
-    background: #28a745;
     color: white;
     border: none;
     border-radius: 8px;
     font-weight: 700;
     cursor: pointer;
     transition: background 0.2s;
+  }
+
+  .check-btn {
+    background: #28a745;
   }
 
   .check-btn:hover:not(:disabled) {
@@ -311,6 +418,54 @@
   .check-btn:disabled {
     background: #6c757d;
     cursor: not-allowed;
+  }
+
+  .hint-btn {
+    background: #ffc107;
+    color: #212529;
+  }
+
+  .hint-btn:hover:not(:disabled) {
+    background: #e0a800;
+  }
+
+  .hint-btn:disabled {
+    background: #6c757d;
+    color: white;
+    cursor: not-allowed;
+  }
+
+  .feedback {
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1rem;
+    animation: slideIn 0.3s ease-out;
+  }
+
+  .feedback.correct {
+    background: #d4edda;
+    color: #155724;
+    border: 2px solid #28a745;
+  }
+
+  .feedback.incorrect {
+    background: #f8d7da;
+    color: #721c24;
+    border: 2px solid #dc3545;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .answer-reveal {
