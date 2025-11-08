@@ -65,6 +65,10 @@
     text-align: center;
     text-transform: uppercase;
     transition: all 0.2s;
+    line-height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .letter-box:focus {

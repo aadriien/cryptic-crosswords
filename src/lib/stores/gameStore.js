@@ -18,6 +18,10 @@ export const attempted = writable(0);
 export const feedbackMessage = writable('');
 export const feedbackType = writable(''); // 'correct' or 'incorrect'
 
+// Solved clues inventory
+export const solvedClues = writable([]); // Array of solved clue objects
+export const showInventory = writable(false);
+
 // Derived stores
 export const filteredClues = derived(
   selectedDifficulty,

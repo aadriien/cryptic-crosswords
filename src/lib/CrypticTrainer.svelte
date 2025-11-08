@@ -6,6 +6,7 @@
   import DifficultySelector from './components/DifficultySelector.svelte';
   import ClueCard from './components/ClueCard.svelte';
   import Navigation from './components/Navigation.svelte';
+  import SolvedCluesInventory from './components/SolvedCluesInventory.svelte';
   
   // Initialize answer state when component mounts or when answer length changes
   $: if ($answerLength > 0) {
@@ -16,6 +17,7 @@
 <div class="trainer">
   <StatsDisplay />
   <DifficultySelector />
+  <SolvedCluesInventory />
   <ClueCard />
   <Navigation />
 </div>

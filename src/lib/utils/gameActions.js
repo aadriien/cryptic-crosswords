@@ -13,7 +13,8 @@ import {
   feedbackMessage,
   feedbackType,
   hintLevel,
-  selectedDifficulty
+  selectedDifficulty,
+  solvedClues
 } from '../stores/gameStore.js';
 
 /**
@@ -45,6 +46,16 @@ export function checkAnswer() {
     attempted.update(a => a + 1);
     feedbackMessage.set('Correct! Well done! 🎉');
     feedbackType.set('correct');
+    
+    // Add to solved clues inventory
+    solvedClues.update(solved => {
+      // Check if already in solved list
+      const exists = solved.some(c => c.clue === clue.clue && c.answer === clue.answer);
+      if (!exists) {
+        return [...solved, { ...clue, solvedAt: new Date().toISOString() }];
+      }
+      return solved;
+    });
     
     setTimeout(() => {
       nextClue();

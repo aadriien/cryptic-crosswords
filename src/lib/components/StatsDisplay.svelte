@@ -4,7 +4,7 @@
 
 <div class="stats">
   <span>Score: {$score}/{$attempted}</span>
-  <span>Clue {$currentClueIndex + 1} of {$filteredClues.length}</span>
+  <span>Cryptic {$currentClueIndex + 1} of {$filteredClues.length}</span>
 </div>
 
 <style>
