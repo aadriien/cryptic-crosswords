@@ -203,7 +203,7 @@
         {/if}
         {#if hintLevel >= 3}
           <div class="hint-item fodder">
-            <span class="hint-label">Wordplay:</span>
+            <span class="hint-label">Fodder:</span>
             <span class="hint-value">{currentClue.hints.fodder}</span>
           </div>
         {/if}

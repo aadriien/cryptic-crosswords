@@ -7,9 +7,9 @@ export const crypticClues = [
     difficulty: "easy",
     type: "Double Definition",
     hints: {
-      definition: "Both 'Boat' and 'made' are definitions",
-      indicator: "No indicator - this is a double definition",
-      fodder: "CRAFT = a boat/vessel, CRAFT = skill/art of making"
+      definition: "'Boat' is the definition",
+      indicator: "None - this is a double definition",
+      fodder: "'made of paper' is the other definition"
     },
     explanation: {
       definition: "'Boat' and 'made' are both definitions of the answer",
@@ -25,9 +25,9 @@ export const crypticClues = [
     difficulty: "easy",
     type: "Double Definition",
     hints: {
-      definition: "'Observe' and 'parade' both define the answer",
-      indicator: "No indicator needed - double definition",
-      fodder: "WATCH = to observe, WATCH = a guard/parade"
+      definition: "'Observe' is the definition",
+      indicator: "None - double definition",
+      fodder: "'the parade' is the other definition"
     },
     explanation: {
       definition: "'Observe' and 'the parade' both point to the answer",
@@ -43,9 +43,9 @@ export const crypticClues = [
     difficulty: "easy",
     type: "Double Definition",
     hints: {
-      definition: "'Flower' and 'girl's name' are both definitions",
-      indicator: "No indicator - double definition",
-      fodder: "ROSE = a type of flower, ROSE = female name"
+      definition: "'Flower' is the definition",
+      indicator: "None - double definition",
+      fodder: "'girl's name' is the other definition"
     },
     explanation: {
       definition: "'Flower' and 'girl's name' both define the answer",
@@ -64,8 +64,8 @@ export const crypticClues = [
     type: "Homophone",
     hints: {
       definition: "'Belonging to us' is the definition",
-      indicator: "'we hear' signals a sound-alike word",
-      fodder: "Think of a word that sounds like OUR (like HOUR)"
+      indicator: "'we hear' means find a homophone (sound-alike)",
+      fodder: "Think of a time word that sounds like the answer"
     },
     explanation: {
       definition: "'Belonging to us' is the definition",
@@ -149,8 +149,8 @@ export const crypticClues = [
     type: "Reversal",
     hints: {
       definition: "'fish' is the definition",
-      indicator: "'turned over' means reverse the word",
-      fodder: "Music maker = AUNT, reverse it to get the fish"
+      indicator: "'turned over' means reverse a word",
+      fodder: "'Music maker' needs to be reversed"
     },
     explanation: {
       definition: "'fish' is the definition",
@@ -266,8 +266,8 @@ export const crypticClues = [
     type: "Hidden Word",
     hints: {
       definition: "'Musical work' is the definition",
-      indicator: "'held by' means the answer is contained within",
-      fodder: "Look inside 'sparTAN THEMe' for the hidden word"
+      indicator: "'held by' means a hidden word",
+      fodder: "The answer is hidden within 'Spartan theme'"
     },
     explanation: {
       definition: "'Musical work' is the definition",
@@ -312,8 +312,8 @@ export const crypticClues = [
     type: "Charade",
     hints: {
       definition: "'A tree' is the definition",
-      indicator: "Parts are joined together (charade)",
-      fodder: "'like' = AS, 'one' (prison) = PEN. Put them together!"
+      indicator: "None - parts join directly (charade)",
+      fodder: "'is like' + 'one' (think: slang for prison)"
     },
     explanation: {
       definition: "'A tree' is the definition",
@@ -330,8 +330,8 @@ export const crypticClues = [
     type: "Homophone",
     hints: {
       definition: "'ocean' is the definition",
-      indicator: "'Listening to' means think about sound",
-      fodder: "The musical note 'C' sounds like SEA"
+      indicator: "'Listening to' means a homophone (sound-alike)",
+      fodder: "'music' - think of a musical note"
     },
     explanation: {
       definition: "'ocean' is the definition",
@@ -363,8 +363,8 @@ export const crypticClues = [
     type: "Hidden Word",
     hints: {
       definition: "'Insect' is the definition",
-      indicator: "'found in' tells you the answer is hidden",
-      fodder: "Look inside 'the pANTry' for the insect"
+      indicator: "'found in' means a hidden word",
+      fodder: "The answer is hidden in 'the pantry'"
     },
     explanation: {
       definition: "'Insect' is the definition",
@@ -380,9 +380,9 @@ export const crypticClues = [
     difficulty: "easy",
     type: "Double Definition",
     hints: {
-      definition: "Both 'Small' and 'child' are definitions",
-      indicator: "No indicator - simple double definition",
-      fodder: "TOT = small amount (whisky), TOT = young child"
+      definition: "'Small' is the definition",
+      indicator: "None - double definition",
+      fodder: "'child' is the other definition"
     },
     explanation: {
       definition: "Both 'Small' and 'child' define the answer",
@@ -591,9 +591,9 @@ export const crypticClues = [
     difficulty: "easy",
     type: "Double Definition",
     hints: {
-      definition: "Both 'Compete' and 'competition' define it",
-      indicator: "No indicator - double definition",
-      fodder: "RACE = to compete, RACE = a competition"
+      definition: "'Compete' is the definition",
+      indicator: "None - double definition",
+      fodder: "'in a competition' is the other definition"
     },
     explanation: {
       definition: "Both parts of the clue define RACE",
@@ -627,9 +627,9 @@ export const crypticClues = [
     difficulty: "easy",
     type: "Double Definition",
     hints: {
-      definition: "Both 'Pub' and 'end' define the answer",
-      indicator: "No indicator needed",
-      fodder: "BAR = a pub/drinking place, BAR = to end/block"
+      definition: "'Pub' is the definition",
+      indicator: "None - double definition",
+      fodder: "'at end of street' is the other definition (think: to bar/block)"
     },
     explanation: {
       definition: "Pub and barrier/end both work",
@@ -645,9 +645,9 @@ export const crypticClues = [
     difficulty: "easy",
     type: "Double Definition",
     hints: {
-      definition: "'tree' and 'mountain' both point to the answer",
-      indicator: "'or' connects two definitions",
-      fodder: "ASH = a type of tree, ASH = volcanic residue (mountain connection)"
+      definition: "'Type of tree' is the definition",
+      indicator: "'or' signals a double definition",
+      fodder: "'mountain' is the other definition (think: volcanic residue)"
     },
     explanation: {
       definition: "Tree species and volcanic material",
@@ -865,9 +865,9 @@ export const crypticClues = [
     difficulty: "medium",
     type: "Double Definition",
     hints: {
-      definition: "'Bird' is one definition",
-      indicator: "Think multiple meanings",
-      fodder: "DUCK = a bird, DUCK = to avoid/dodge (on the side)"
+      definition: "'Bird' is the definition",
+      indicator: "None - double definition",
+      fodder: "'on the side' is the other definition (think: to avoid)"
     },
     explanation: {
       definition: "Waterfowl and action",
