@@ -11,6 +11,7 @@
   let revealedLetters = [];
   let feedbackMessage = '';
   let feedbackType = ''; // 'correct' or 'incorrect'
+  let hintLevel = 0; // 0 = no hints, 1 = definition, 2 = indicator, 3 = fodder
 
   $: currentClue = filteredClues[currentClueIndex];
   $: filteredClues = selectedDifficulty === 'all' 
@@ -78,6 +79,7 @@
     showExplanation = false;
     feedbackMessage = '';
     feedbackType = '';
+    hintLevel = 0;
   }
 
   function previousClue() {
@@ -88,6 +90,7 @@
     showExplanation = false;
     feedbackMessage = '';
     feedbackType = '';
+    hintLevel = 0;
   }
 
   function handleInput(index, event) {
@@ -129,6 +132,13 @@
     showExplanation = false;
     feedbackMessage = '';
     feedbackType = '';
+    hintLevel = 0;
+  }
+
+  function showNextHint() {
+    if (hintLevel < 3) {
+      hintLevel++;
+    }
   }
 </script>
 
@@ -177,6 +187,29 @@
       "{currentClue.clue}"
     </div>
     
+    {#if hintLevel > 0 && currentClue.hints}
+      <div class="hint-display">
+        {#if hintLevel >= 1}
+          <div class="hint-item definition">
+            <span class="hint-label">Definition:</span>
+            <span class="hint-value">{currentClue.hints.definition}</span>
+          </div>
+        {/if}
+        {#if hintLevel >= 2}
+          <div class="hint-item indicator">
+            <span class="hint-label">Indicator:</span>
+            <span class="hint-value">{currentClue.hints.indicator}</span>
+          </div>
+        {/if}
+        {#if hintLevel >= 3}
+          <div class="hint-item fodder">
+            <span class="hint-label">Wordplay:</span>
+            <span class="hint-value">{currentClue.hints.fodder}</span>
+          </div>
+        {/if}
+      </div>
+    {/if}
+    
     <div class="letter-count">
       ({currentClue.length})
     </div>
@@ -218,6 +251,9 @@
     {/if}
 
     <div class="action-buttons">
+      <button on:click={showNextHint} disabled={showAnswer || hintLevel >= 3}>
+        💡 {hintLevel === 0 ? 'Show Hint' : hintLevel === 1 ? 'More Hints' : hintLevel === 2 ? 'More Hints' : 'All Hints Shown'}
+      </button>
       <button on:click={revealAnswer} disabled={showAnswer}>
         Reveal Answer
       </button>
@@ -466,6 +502,42 @@
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  .hint-display {
+    background: #e7f3ff;
+    border-left: 4px solid #2196F3;
+    padding: 1rem;
+    border-radius: 6px;
+    margin: 1rem 0;
+    animation: slideIn 0.3s ease-out;
+  }
+
+  .hint-item {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+  }
+
+  .hint-label {
+    font-weight: 700;
+    color: #1976D2;
+    margin-right: 0.5rem;
+  }
+
+  .hint-value {
+    color: #424242;
+  }
+
+  .hint-item.definition .hint-label {
+    color: #2e7d32;
+  }
+
+  .hint-item.indicator .hint-label {
+    color: #f57c00;
+  }
+
+  .hint-item.fodder .hint-label {
+    color: #7b1fa2;
   }
 
   .answer-reveal {

@@ -6,6 +6,11 @@ export const crypticClues = [
     length: "5",
     difficulty: "easy",
     type: "Double Definition",
+    hints: {
+      definition: "Both 'Boat' and 'made' are definitions",
+      indicator: "No indicator - this is a double definition",
+      fodder: "CRAFT = a boat/vessel, CRAFT = skill/art of making"
+    },
     explanation: {
       definition: "'Boat' and 'made' are both definitions of the answer",
       wordplay: "CRAFT can mean both a boat/vessel AND the skill of making things (like paper craft)",
@@ -19,6 +24,11 @@ export const crypticClues = [
     length: "5",
     difficulty: "easy",
     type: "Double Definition",
+    hints: {
+      definition: "'Observe' and 'parade' both define the answer",
+      indicator: "No indicator needed - double definition",
+      fodder: "WATCH = to observe, WATCH = a guard/parade"
+    },
     explanation: {
       definition: "'Observe' and 'the parade' both point to the answer",
       wordplay: "WATCH = to observe, WATCH = a parade/procession",
@@ -32,6 +42,11 @@ export const crypticClues = [
     length: "4",
     difficulty: "easy",
     type: "Double Definition",
+    hints: {
+      definition: "'Flower' and 'girl's name' are both definitions",
+      indicator: "No indicator - double definition",
+      fodder: "ROSE = a type of flower, ROSE = female name"
+    },
     explanation: {
       definition: "'Flower' and 'girl's name' both define the answer",
       wordplay: "ROSE is both a flower AND a common girl's name",
@@ -47,6 +62,11 @@ export const crypticClues = [
     length: "3",
     difficulty: "medium",
     type: "Homophone",
+    hints: {
+      definition: "'Belonging to us' is the definition",
+      indicator: "'we hear' signals a sound-alike word",
+      fodder: "Think of a word that sounds like OUR (like HOUR)"
+    },
     explanation: {
       definition: "'Belonging to us' is the definition",
       wordplay: "The phrase 'we hear' indicates a homophone (sounds-like) clue. OUR sounds like HOUR",
@@ -127,6 +147,11 @@ export const crypticClues = [
     length: "4",
     difficulty: "medium",
     type: "Reversal",
+    hints: {
+      definition: "'fish' is the definition",
+      indicator: "'turned over' means reverse the word",
+      fodder: "Music maker = AUNT, reverse it to get the fish"
+    },
     explanation: {
       definition: "'fish' is the definition",
       wordplay: "'turned over' indicates reversal. Music maker = AUNT (like Auntie Beeb, BBC), reversed = TUNA",
@@ -239,6 +264,11 @@ export const crypticClues = [
     length: "6",
     difficulty: "medium",
     type: "Hidden Word",
+    hints: {
+      definition: "'Musical work' is the definition",
+      indicator: "'held by' means the answer is contained within",
+      fodder: "Look inside 'sparTAN THEMe' for the hidden word"
+    },
     explanation: {
       definition: "'Musical work' is the definition",
       wordplay: "'held by' indicates hidden word. 'sparTAN THEMe' contains ANTHEM",
@@ -280,6 +310,11 @@ export const crypticClues = [
     length: "5",
     difficulty: "easy",
     type: "Charade",
+    hints: {
+      definition: "'A tree' is the definition",
+      indicator: "Parts are joined together (charade)",
+      fodder: "'like' = AS, 'one' (prison) = PEN. Put them together!"
+    },
     explanation: {
       definition: "'A tree' is the definition",
       wordplay: "AS (like) + PEN (one = penitentiary, jail)",
@@ -293,6 +328,11 @@ export const crypticClues = [
     length: "3",
     difficulty: "easy",
     type: "Homophone",
+    hints: {
+      definition: "'ocean' is the definition",
+      indicator: "'Listening to' means think about sound",
+      fodder: "The musical note 'C' sounds like SEA"
+    },
     explanation: {
       definition: "'ocean' is the definition",
       wordplay: "'Listening to' indicates homophone. Music note = C, sounds like SEA",
@@ -321,6 +361,11 @@ export const crypticClues = [
     length: "3",
     difficulty: "easy",
     type: "Hidden Word",
+    hints: {
+      definition: "'Insect' is the definition",
+      indicator: "'found in' tells you the answer is hidden",
+      fodder: "Look inside 'the pANTry' for the insect"
+    },
     explanation: {
       definition: "'Insect' is the definition",
       wordplay: "'found in' indicates hidden word. 'the pANTry' contains ANT",
@@ -334,6 +379,11 @@ export const crypticClues = [
     length: "3",
     difficulty: "easy",
     type: "Double Definition",
+    hints: {
+      definition: "Both 'Small' and 'child' are definitions",
+      indicator: "No indicator - simple double definition",
+      fodder: "TOT = small amount (whisky), TOT = young child"
+    },
     explanation: {
       definition: "Both 'Small' and 'child' define the answer",
       wordplay: "TOT = a small amount (like a tot of whisky), TOT = a small child",
