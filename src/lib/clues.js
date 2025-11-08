@@ -317,5 +317,25 @@ export const crypticClues = [
       breakdown: "UNIT (container) + ED = UNITED (married/joined together). This is a charade where parts are added together.",
       tip: "Look for common abbreviations like ED, AL, DI, etc. that can represent names or roles."
     }
+  },
+
+  // === HARD ANAGRAM ===
+  {
+    clue: "Office worker from a terse cry, stressed (9)",
+    answer: "SECRETARY",
+    length: "9",
+    difficulty: "hard",
+    type: "Anagram",
+    hints: {
+      definition: "'Office worker'",
+      indicator: "'stressed' — anagram indicator",
+      fodder: "'A TERSE CRY' (letters to rearrange)"
+    },
+    explanation: {
+      definition: "Office worker = SECRETARY",
+      wordplay: "Anagram ('stressed') of 'A TERSE CRY'",
+      breakdown: "A TERSE CRY → SECRETARY",
+      tip: "Anagram indicators include: stressed, upset, broken, mixed, confused, reformed."
+    }
   }
 ];
