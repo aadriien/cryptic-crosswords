@@ -22,6 +22,7 @@ dev:
 # Build for production
 build:
 	@echo "Building for production..."
+	@rm -rf dist
 	@$(NPM) run build
 
 # Preview production build locally
