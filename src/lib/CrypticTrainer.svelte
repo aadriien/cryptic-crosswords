@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from 'svelte';
   import { answerLength } from './stores/gameStore.js';
   import { resetAnswerState } from './utils/gameActions.js';
   import StatsDisplay from './components/StatsDisplay.svelte';
