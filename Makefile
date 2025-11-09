@@ -32,8 +32,7 @@ preview: build
 # Deploy to GitHub Pages
 deploy: build
 	@echo "Deploying to GitHub Pages..."
-	@echo "TODO: Configure GitHub Pages deployment"
-	@echo "Hint: npm install -D gh-pages && add deploy script to package.json"
+	@$(NPM) run deploy
 
 # Clean node_modules & build artifacts
 clean:
