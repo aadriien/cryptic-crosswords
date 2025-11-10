@@ -1,18 +1,14 @@
 <script>
   import { selectedSource } from '../stores/gameStore.js';
   import { changeSource } from '../utils/gameActions.js';
-
-  const sources = [
-    { value: 'regular', label: 'Regular' },
-    { value: 'nytimes', label: 'NY Times' }
-  ];
+  import { sources } from '../data/sources.js';
 </script>
 
 <div class="source-selector">
-  {#each sources as { value, label }}
+  {#each sources as { id, label }}
     <button
-      class:active={$selectedSource === value}
-      on:click={() => changeSource(value)}
+      class:active={$selectedSource === id}
+      on:click={() => changeSource(id)}
     >
       {label}
     </button>

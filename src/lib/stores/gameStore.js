@@ -1,6 +1,5 @@
 import { writable, derived } from 'svelte/store';
-import { crypticClues as regularClues } from '../data/clues.js';
-import { crypticClues as nytimesClues } from '../data/NYTimes-clues.js';
+import { getCluesForSource } from '../data/sources.js';
 
 // Core state
 export const currentClueIndex = writable(0);
@@ -55,7 +54,7 @@ if (typeof window !== 'undefined') {
 export const allClues = derived(
   selectedSource,
   ($selectedSource) => {
-    return $selectedSource === 'nytimes' ? nytimesClues : regularClues;
+    return getCluesForSource($selectedSource);
   }
 );
 
