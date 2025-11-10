@@ -1,23 +1,5 @@
 export const crypticClues = [
   {
-    "clue": "Starts in again with career write-ups (7)",
-    "answer": "RESUMES",
-    "length": "7",
-    "difficulty": "medium",
-    "type": "Definition + Wordplay",
-    "hints": {
-      "definition": "Starts in again/career write-ups",
-      "indicator": "unknown",
-      "fodder": "unknown"
-    },
-    "explanation": {
-      "definition": "Starts in again/career write-ups",
-      "wordplay": "Not provided (from dataset export)",
-      "breakdown": "Cryptic clue from exported JSON",
-      "tip": "Identify the definition first — usually at start or end of the clue."
-    }
-  },
-  {
     "clue": "Dorians arranged aggressive advances (7)",
     "answer": "INROADS",
     "length": "7",
@@ -30,24 +12,6 @@ export const crypticClues = [
     },
     "explanation": {
       "definition": "aggressive advances",
-      "wordplay": "Not provided (from dataset export)",
-      "breakdown": "Cryptic clue from exported JSON",
-      "tip": "Identify the definition first — usually at start or end of the clue."
-    }
-  },
-  {
-    "clue": "- CollinsDictionary.com (Penguin Random House LLC/HarperCollins Publishers Ltd )",
-    "answer": "S",
-    "length": "",
-    "difficulty": "medium",
-    "type": "Definition + Wordplay",
-    "hints": {
-      "definition": "L",
-      "indicator": "unknown",
-      "fodder": "unknown"
-    },
-    "explanation": {
-      "definition": "L",
       "wordplay": "Not provided (from dataset export)",
       "breakdown": "Cryptic clue from exported JSON",
       "tip": "Identify the definition first — usually at start or end of the clue."
@@ -72,24 +36,6 @@ export const crypticClues = [
     }
   },
   {
-    "clue": "Serve-yourself meal hit repeatedly (6)",
-    "answer": "BUFFET",
-    "length": "6",
-    "difficulty": "medium",
-    "type": "Definition + Wordplay",
-    "hints": {
-      "definition": "Serve-yourself meal/hit repeatedly",
-      "indicator": "unknown",
-      "fodder": "unknown"
-    },
-    "explanation": {
-      "definition": "Serve-yourself meal/hit repeatedly",
-      "wordplay": "Not provided (from dataset export)",
-      "breakdown": "Cryptic clue from exported JSON",
-      "tip": "Identify the definition first — usually at start or end of the clue."
-    }
-  },
-  {
     "clue": "Cut that woman’s slip stealthily (7)",
     "answer": "SLITHER",
     "length": "7",
@@ -108,42 +54,6 @@ export const crypticClues = [
     }
   },
   {
-    "clue": "Extract metal from fish (5)",
-    "answer": "SMELT",
-    "length": "5",
-    "difficulty": "medium",
-    "type": "Definition + Wordplay",
-    "hints": {
-      "definition": "Extract metal/fish",
-      "indicator": "unknown",
-      "fodder": "unknown"
-    },
-    "explanation": {
-      "definition": "Extract metal/fish",
-      "wordplay": "Not provided (from dataset export)",
-      "breakdown": "Cryptic clue from exported JSON",
-      "tip": "Identify the definition first — usually at start or end of the clue."
-    }
-  },
-  {
-    "clue": "Breakwater that’s blackish? (5)",
-    "answer": "JETTY",
-    "length": "5",
-    "difficulty": "medium",
-    "type": "Definition + Wordplay",
-    "hints": {
-      "definition": "Breakwater/blackish",
-      "indicator": "unknown",
-      "fodder": "unknown"
-    },
-    "explanation": {
-      "definition": "Breakwater/blackish",
-      "wordplay": "Not provided (from dataset export)",
-      "breakdown": "Cryptic clue from exported JSON",
-      "tip": "Identify the definition first — usually at start or end of the clue."
-    }
-  },
-  {
     "clue": "As is, run crazy in Putin’s language (7)",
     "answer": "RUSSIAN",
     "length": "7",
@@ -156,24 +66,6 @@ export const crypticClues = [
     },
     "explanation": {
       "definition": "Putin’s language",
-      "wordplay": "Not provided (from dataset export)",
-      "breakdown": "Cryptic clue from exported JSON",
-      "tip": "Identify the definition first — usually at start or end of the clue."
-    }
-  },
-  {
-    "clue": "- CollinsDictionary.com (Penguin Random House LLC/HarperCollins Publishers Ltd )",
-    "answer": "S",
-    "length": "",
-    "difficulty": "medium",
-    "type": "Definition + Wordplay",
-    "hints": {
-      "definition": "R",
-      "indicator": "unknown",
-      "fodder": "unknown"
-    },
-    "explanation": {
-      "definition": "R",
       "wordplay": "Not provided (from dataset export)",
       "breakdown": "Cryptic clue from exported JSON",
       "tip": "Identify the definition first — usually at start or end of the clue."
@@ -630,24 +522,6 @@ export const crypticClues = [
     }
   },
   {
-    "clue": "Pickled bud’s prank (5)",
-    "answer": "CAPER",
-    "length": "5",
-    "difficulty": "medium",
-    "type": "Definition + Wordplay",
-    "hints": {
-      "definition": "Pickled bud/prank",
-      "indicator": "unknown",
-      "fodder": "unknown"
-    },
-    "explanation": {
-      "definition": "Pickled bud/prank",
-      "wordplay": "Not provided (from dataset export)",
-      "breakdown": "Cryptic clue from exported JSON",
-      "tip": "Identify the definition first — usually at start or end of the clue."
-    }
-  },
-  {
     "clue": "Sudden movement outside operator’s room (6)",
     "answer": "LOUNGE",
     "length": "6",
@@ -792,24 +666,6 @@ export const crypticClues = [
     }
   },
   {
-    "clue": "Shucks, it’s Bobby and Brett (5)",
-    "answer": "HULLS",
-    "length": "5",
-    "difficulty": "medium",
-    "type": "Definition + Wordplay",
-    "hints": {
-      "definition": "Shucks/Bobby and Brett",
-      "indicator": "unknown",
-      "fodder": "unknown"
-    },
-    "explanation": {
-      "definition": "Shucks/Bobby and Brett",
-      "wordplay": "Not provided (from dataset export)",
-      "breakdown": "Cryptic clue from exported JSON",
-      "tip": "Identify the definition first — usually at start or end of the clue."
-    }
-  },
-  {
     "clue": "Pronounced Gretzky’s decline (4)",
     "answer": "WANE",
     "length": "4",
@@ -858,24 +714,6 @@ export const crypticClues = [
     },
     "explanation": {
       "definition": "Mark in the Hall of Fame",
-      "wordplay": "Not provided (from dataset export)",
-      "breakdown": "Cryptic clue from exported JSON",
-      "tip": "Identify the definition first — usually at start or end of the clue."
-    }
-  },
-  {
-    "clue": "Get one goal, or twenty (5)",
-    "answer": "SCORE",
-    "length": "5",
-    "difficulty": "medium",
-    "type": "Definition + Wordplay",
-    "hints": {
-      "definition": "Get one goal/twenty",
-      "indicator": "unknown",
-      "fodder": "unknown"
-    },
-    "explanation": {
-      "definition": "Get one goal/twenty",
       "wordplay": "Not provided (from dataset export)",
       "breakdown": "Cryptic clue from exported JSON",
       "tip": "Identify the definition first — usually at start or end of the clue."
@@ -1200,24 +1038,6 @@ export const crypticClues = [
     },
     "explanation": {
       "definition": "tennis Hall-of-famer Fraser",
-      "wordplay": "Not provided (from dataset export)",
-      "breakdown": "Cryptic clue from exported JSON",
-      "tip": "Identify the definition first — usually at start or end of the clue."
-    }
-  },
-  {
-    "clue": "Scatter, as seed for swine (3)",
-    "answer": "SOW",
-    "length": "3",
-    "difficulty": "medium",
-    "type": "Definition + Wordplay",
-    "hints": {
-      "definition": "Scatter, as seed/swine",
-      "indicator": "unknown",
-      "fodder": "unknown"
-    },
-    "explanation": {
-      "definition": "Scatter, as seed/swine",
       "wordplay": "Not provided (from dataset export)",
       "breakdown": "Cryptic clue from exported JSON",
       "tip": "Identify the definition first — usually at start or end of the clue."
@@ -2070,24 +1890,6 @@ export const crypticClues = [
     }
   },
   {
-    "clue": "Tailor’s underground passage (5)",
-    "answer": "SEWER",
-    "length": "5",
-    "difficulty": "medium",
-    "type": "Definition + Wordplay",
-    "hints": {
-      "definition": "Tailor/underground passage",
-      "indicator": "unknown",
-      "fodder": "unknown"
-    },
-    "explanation": {
-      "definition": "Tailor/underground passage",
-      "wordplay": "Not provided (from dataset export)",
-      "breakdown": "Cryptic clue from exported JSON",
-      "tip": "Identify the definition first — usually at start or end of the clue."
-    }
-  },
-  {
     "clue": "A poet wearing Eliot’s medieval garments (7)",
     "answer": "TABARDS",
     "length": "7",
@@ -2466,24 +2268,6 @@ export const crypticClues = [
     }
   },
   {
-    "clue": "Movie star's house feature (5)",
-    "answer": "GABLE",
-    "length": "5",
-    "difficulty": "medium",
-    "type": "Definition + Wordplay",
-    "hints": {
-      "definition": "Movie star/house feature",
-      "indicator": "unknown",
-      "fodder": "unknown"
-    },
-    "explanation": {
-      "definition": "Movie star/house feature",
-      "wordplay": "Not provided (from dataset export)",
-      "breakdown": "Cryptic clue from exported JSON",
-      "tip": "Identify the definition first — usually at start or end of the clue."
-    }
-  },
-  {
     "clue": "Party held for a famous knight (7)",
     "answer": "GALAHAD",
     "length": "7",
@@ -2694,6 +2478,222 @@ export const crypticClues = [
     },
     "explanation": {
       "definition": "motor home",
+      "wordplay": "Not provided (from dataset export)",
+      "breakdown": "Cryptic clue from exported JSON",
+      "tip": "Identify the definition first — usually at start or end of the clue."
+    }
+  },
+  {
+    "clue": "Audited material for a sculptor and artist (4)",
+    "answer": "KLEE",
+    "length": "4",
+    "difficulty": "medium",
+    "type": "Definition + Wordplay",
+    "hints": {
+      "definition": "artist",
+      "indicator": "unknown",
+      "fodder": "unknown"
+    },
+    "explanation": {
+      "definition": "artist",
+      "wordplay": "Not provided (from dataset export)",
+      "breakdown": "Cryptic clue from exported JSON",
+      "tip": "Identify the definition first — usually at start or end of the clue."
+    }
+  },
+  {
+    "clue": "Chunk in lake eaten by fish (4)",
+    "answer": "CLOD",
+    "length": "4",
+    "difficulty": "medium",
+    "type": "Definition + Wordplay",
+    "hints": {
+      "definition": "Chunk",
+      "indicator": "unknown",
+      "fodder": "unknown"
+    },
+    "explanation": {
+      "definition": "Chunk",
+      "wordplay": "Not provided (from dataset export)",
+      "breakdown": "Cryptic clue from exported JSON",
+      "tip": "Identify the definition first — usually at start or end of the clue."
+    }
+  },
+  {
+    "clue": "Farm animal’s hole not finished (5)",
+    "answer": "BURRO",
+    "length": "5",
+    "difficulty": "medium",
+    "type": "Definition + Wordplay",
+    "hints": {
+      "definition": "Farm animal",
+      "indicator": "unknown",
+      "fodder": "unknown"
+    },
+    "explanation": {
+      "definition": "Farm animal",
+      "wordplay": "Not provided (from dataset export)",
+      "breakdown": "Cryptic clue from exported JSON",
+      "tip": "Identify the definition first — usually at start or end of the clue."
+    }
+  },
+  {
+    "clue": "Doctor a thug and soldier (7)",
+    "answer": "DRAGOON",
+    "length": "7",
+    "difficulty": "medium",
+    "type": "Definition + Wordplay",
+    "hints": {
+      "definition": "soldier",
+      "indicator": "unknown",
+      "fodder": "unknown"
+    },
+    "explanation": {
+      "definition": "soldier",
+      "wordplay": "Not provided (from dataset export)",
+      "breakdown": "Cryptic clue from exported JSON",
+      "tip": "Identify the definition first — usually at start or end of the clue."
+    }
+  },
+  {
+    "clue": "Look for victory, you might say, in glittery bit (6)",
+    "answer": "SEQUIN",
+    "length": "6",
+    "difficulty": "medium",
+    "type": "Definition + Wordplay",
+    "hints": {
+      "definition": "glittery bit",
+      "indicator": "unknown",
+      "fodder": "unknown"
+    },
+    "explanation": {
+      "definition": "glittery bit",
+      "wordplay": "Not provided (from dataset export)",
+      "breakdown": "Cryptic clue from exported JSON",
+      "tip": "Identify the definition first — usually at start or end of the clue."
+    }
+  },
+  {
+    "clue": "David’s wife is a huge pain (7)",
+    "answer": "ABIGAIL",
+    "length": "7",
+    "difficulty": "medium",
+    "type": "Definition + Wordplay",
+    "hints": {
+      "definition": "David’s wife",
+      "indicator": "unknown",
+      "fodder": "unknown"
+    },
+    "explanation": {
+      "definition": "David’s wife",
+      "wordplay": "Not provided (from dataset export)",
+      "breakdown": "Cryptic clue from exported JSON",
+      "tip": "Identify the definition first — usually at start or end of the clue."
+    }
+  },
+  {
+    "clue": "Talk nonchalantly and quickly (7)",
+    "answer": "RAPIDLY",
+    "length": "7",
+    "difficulty": "medium",
+    "type": "Definition + Wordplay",
+    "hints": {
+      "definition": "quickly",
+      "indicator": "unknown",
+      "fodder": "unknown"
+    },
+    "explanation": {
+      "definition": "quickly",
+      "wordplay": "Not provided (from dataset export)",
+      "breakdown": "Cryptic clue from exported JSON",
+      "tip": "Identify the definition first — usually at start or end of the clue."
+    }
+  },
+  {
+    "clue": "Like a swamp’s damage: modest (6)",
+    "answer": "MARSHY",
+    "length": "6",
+    "difficulty": "medium",
+    "type": "Definition + Wordplay",
+    "hints": {
+      "definition": "Like a swamp",
+      "indicator": "unknown",
+      "fodder": "unknown"
+    },
+    "explanation": {
+      "definition": "Like a swamp",
+      "wordplay": "Not provided (from dataset export)",
+      "breakdown": "Cryptic clue from exported JSON",
+      "tip": "Identify the definition first — usually at start or end of the clue."
+    }
+  },
+  {
+    "clue": "Urban grocery’s bad smell turned old (6)",
+    "answer": "BODEGA",
+    "length": "6",
+    "difficulty": "medium",
+    "type": "Definition + Wordplay",
+    "hints": {
+      "definition": "Urban grocery",
+      "indicator": "unknown",
+      "fodder": "unknown"
+    },
+    "explanation": {
+      "definition": "Urban grocery",
+      "wordplay": "Not provided (from dataset export)",
+      "breakdown": "Cryptic clue from exported JSON",
+      "tip": "Identify the definition first — usually at start or end of the clue."
+    }
+  },
+  {
+    "clue": "Returned thick white cheese in silky material (7)",
+    "answer": "TAFFETA",
+    "length": "7",
+    "difficulty": "medium",
+    "type": "Definition + Wordplay",
+    "hints": {
+      "definition": "silky material",
+      "indicator": "unknown",
+      "fodder": "unknown"
+    },
+    "explanation": {
+      "definition": "silky material",
+      "wordplay": "Not provided (from dataset export)",
+      "breakdown": "Cryptic clue from exported JSON",
+      "tip": "Identify the definition first — usually at start or end of the clue."
+    }
+  },
+  {
+    "clue": "In hotel, a stickler’s flexible (7)",
+    "answer": "ELASTIC",
+    "length": "7",
+    "difficulty": "medium",
+    "type": "Definition + Wordplay",
+    "hints": {
+      "definition": "flexible",
+      "indicator": "unknown",
+      "fodder": "unknown"
+    },
+    "explanation": {
+      "definition": "flexible",
+      "wordplay": "Not provided (from dataset export)",
+      "breakdown": "Cryptic clue from exported JSON",
+      "tip": "Identify the definition first — usually at start or end of the clue."
+    }
+  },
+  {
+    "clue": "Bulging at the start, I flexed pecs and arm muscles (6)",
+    "answer": "BICEPS",
+    "length": "6",
+    "difficulty": "medium",
+    "type": "Definition + Wordplay",
+    "hints": {
+      "definition": "arm muscles",
+      "indicator": "unknown",
+      "fodder": "unknown"
+    },
+    "explanation": {
+      "definition": "arm muscles",
       "wordplay": "Not provided (from dataset export)",
       "breakdown": "Cryptic clue from exported JSON",
       "tip": "Identify the definition first — usually at start or end of the clue."
