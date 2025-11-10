@@ -1,6 +1,6 @@
 import { writable, derived } from 'svelte/store';
 import { crypticClues as regularClues } from '../data/clues.js';
-import { crypticClues as nytimesClues } from '../data/NYtimes-clues.js';
+import { crypticClues as nytimesClues } from '../data/NYTimes-clues.js';
 
 // Core state
 export const currentClueIndex = writable(0);
