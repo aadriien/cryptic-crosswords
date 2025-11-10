@@ -1,9 +1,11 @@
 import { writable, derived } from 'svelte/store';
-import { crypticClues } from '../clues.js';
+import { crypticClues as regularClues } from '../data/clues.js';
+import { crypticClues as nytimesClues } from '../data/NYtimes-clues.js';
 
 // Core state
 export const currentClueIndex = writable(0);
 export const selectedDifficulty = writable('all');
+export const selectedSource = writable('regular'); // 'regular' or 'nytimes'
 export const userAnswer = writable([]);
 export const revealedLetters = writable([]);
 export const showAnswer = writable(false);
@@ -23,18 +25,28 @@ export const solvedClues = writable([]); // Array of solved clue objects
 export const showInventory = writable(false);
 
 // Derived stores
+export const allClues = derived(
+  selectedSource,
+  ($selectedSource) => {
+    return $selectedSource === 'nytimes' ? nytimesClues : regularClues;
+  }
+);
+
 export const filteredClues = derived(
-  selectedDifficulty,
-  ($selectedDifficulty) => {
+  [allClues, selectedDifficulty],
+  ([$allClues, $selectedDifficulty]) => {
     return $selectedDifficulty === 'all'
-      ? crypticClues
-      : crypticClues.filter(c => c.difficulty === $selectedDifficulty);
+      ? $allClues
+      : $allClues.filter(c => c.difficulty === $selectedDifficulty);
   }
 );
 
 export const currentClue = derived(
   [filteredClues, currentClueIndex],
   ([$filteredClues, $currentClueIndex]) => {
+    if ($filteredClues.length === 0) {
+      return null;
+    }
     return $filteredClues[$currentClueIndex];
   }
 );
@@ -44,4 +56,9 @@ export const answerLength = derived(
   ($currentClue) => {
     return $currentClue ? $currentClue.answer.replace(/\s/g, '').length : 0;
   }
+);
+
+export const hasClues = derived(
+  filteredClues,
+  ($filteredClues) => $filteredClues.length > 0
 );

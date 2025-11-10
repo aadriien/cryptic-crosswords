@@ -14,6 +14,7 @@ import {
   feedbackType,
   hintLevel,
   selectedDifficulty,
+  selectedSource,
   solvedClues
 } from '../stores/gameStore.js';
 
@@ -143,6 +144,15 @@ export function previousClue() {
  */
 export function changeDifficulty(difficulty) {
   selectedDifficulty.set(difficulty);
+  currentClueIndex.set(0);
+  resetAnswerState();
+}
+
+/**
+ * Change clue source
+ */
+export function changeSource(source) {
+  selectedSource.set(source);
   currentClueIndex.set(0);
   resetAnswerState();
 }

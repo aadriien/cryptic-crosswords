@@ -2,6 +2,7 @@
   import { answerLength } from './stores/gameStore.js';
   import { resetAnswerState } from './utils/gameActions.js';
   import StatsDisplay from './components/StatsDisplay.svelte';
+  import SourceSelector from './components/SourceSelector.svelte';
   import DifficultySelector from './components/DifficultySelector.svelte';
   import ClueCard from './components/ClueCard.svelte';
   import Navigation from './components/Navigation.svelte';
@@ -15,6 +16,7 @@
 
 <div class="trainer">
   <StatsDisplay />
+  <SourceSelector />
   <DifficultySelector />
   <SolvedCluesInventory />
   <ClueCard />
