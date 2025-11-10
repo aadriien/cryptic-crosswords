@@ -1,7 +1,7 @@
 NPM ?= npm
 NODE_MODULES_DIR = node_modules
 
-.PHONY: setup dev build preview deploy clean
+.PHONY: setup injest dev build preview deploy clean
 
 all: setup dev
 
@@ -13,6 +13,10 @@ setup:
 	else \
 		echo "Dependencies already installed. Run 'make clean' to reinstall."; \
 	fi
+
+# Convert JSON cryptic data exports to JS 
+injest:
+	@node src/lib/utils/injestClueData.js
 
 # Run development server
 dev:
