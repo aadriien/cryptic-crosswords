@@ -60,11 +60,19 @@ export const allClues = derived(
 );
 
 export const filteredClues = derived(
-  [allClues, selectedDifficulty],
-  ([$allClues, $selectedDifficulty]) => {
-    return $selectedDifficulty === 'all'
+  [allClues, selectedDifficulty, solvedClues],
+  ([$allClues, $selectedDifficulty, $solvedClues]) => {
+    // First filter by difficulty
+    let clues = $selectedDifficulty === 'all'
       ? $allClues
       : $allClues.filter(c => c.difficulty === $selectedDifficulty);
+    
+    // Then filter out solved clues
+    const solvedClueIds = new Set(
+      $solvedClues.map(c => `${c.clue}|${c.answer}`)
+    );
+    
+    return clues.filter(c => !solvedClueIds.has(`${c.clue}|${c.answer}`));
   }
 );
 
