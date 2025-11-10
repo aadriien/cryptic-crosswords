@@ -1,11 +1,19 @@
 <script>
-  import { currentClue, showAnswer, showExplanation, hintLevel } from '../stores/gameStore.js';
+  import { currentClue, showAnswer, showExplanation, hintLevel, hasClues } from '../stores/gameStore.js';
   import { checkAnswer, revealHint, revealAnswer, toggleExplanation, showNextHint } from '../utils/gameActions.js';
   import AnswerInput from './AnswerInput.svelte';
   import HintDisplay from './HintDisplay.svelte';
   import FeedbackDisplay from './FeedbackDisplay.svelte';
 </script>
 
+{#if !$hasClues}
+<div class="no-clues-message">
+  <div class="icon">🔍</div>
+  <h2>No clues available</h2>
+  <p>There are no clues for this difficulty level in the selected source.</p>
+  <p>Try selecting a different difficulty or source above.</p>
+</div>
+{:else if $currentClue}
 <div class="clue-card">
   <div class="clue-header">
     <span class="difficulty-badge {$currentClue.difficulty}">
@@ -67,8 +75,32 @@
     </div>
   {/if}
 </div>
+{/if}
 
 <style>
+  .no-clues-message {
+    background: #f8f9fa;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .no-clues-message .icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  .no-clues-message h2 {
+    color: #495057;
+    margin-bottom: 0.5rem;
+  }
+
+  .no-clues-message p {
+    color: #6c757d;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+  }
   .clue-card {
     background: #f8f9fa;
     padding: 2rem;

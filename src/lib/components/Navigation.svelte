@@ -1,10 +1,11 @@
 <script>
+  import { hasClues } from '../stores/gameStore.js';
   import { previousClue, nextClue } from '../utils/gameActions.js';
 </script>
 
 <div class="navigation">
-  <button on:click={previousClue}>← Previous</button>
-  <button on:click={nextClue}>Next →</button>
+  <button on:click={previousClue} disabled={!$hasClues}>← Previous</button>
+  <button on:click={nextClue} disabled={!$hasClues}>Next →</button>
 </div>
 
 <style>
@@ -26,7 +27,13 @@
     transition: background 0.2s;
   }
 
-  .navigation button:hover {
+  .navigation button:hover:not(:disabled) {
     background: #5568d3;
+  }
+
+  .navigation button:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+    opacity: 0.6;
   }
 </style>
