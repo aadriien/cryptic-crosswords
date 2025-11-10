@@ -20,9 +20,36 @@ export const attempted = writable(0);
 export const feedbackMessage = writable('');
 export const feedbackType = writable(''); // 'correct' or 'incorrect'
 
-// Solved clues inventory
-export const solvedClues = writable([]); // Array of solved clue objects
+// Solved clues inventory with localStorage persistence
+const SOLVED_CLUES_KEY = 'cryptic-crosswords-solved-clues';
+
+// Load solved clues from localStorage on initialization
+function loadSolvedClues() {
+  if (typeof window !== 'undefined') {
+    try {
+      const stored = localStorage.getItem(SOLVED_CLUES_KEY);
+      return stored ? JSON.parse(stored) : [];
+    } catch (e) {
+      console.error('Failed to load solved clues from localStorage:', e);
+      return [];
+    }
+  }
+  return [];
+}
+
+export const solvedClues = writable(loadSolvedClues());
 export const showInventory = writable(false);
+
+// Subscribe to solvedClues changes and save to localStorage
+if (typeof window !== 'undefined') {
+  solvedClues.subscribe(value => {
+    try {
+      localStorage.setItem(SOLVED_CLUES_KEY, JSON.stringify(value));
+    } catch (e) {
+      console.error('Failed to save solved clues to localStorage:', e);
+    }
+  });
+}
 
 // Derived stores
 export const allClues = derived(
