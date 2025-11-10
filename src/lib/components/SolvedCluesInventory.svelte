@@ -9,6 +9,18 @@
     const date = new Date(isoString);
     return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   }
+
+  function deleteClue(index) {
+    solvedClues.update(clues => {
+      return clues.filter((_, i) => i !== index);
+    });
+  }
+
+  function clearAll() {
+    if (confirm('Are you sure you want to clear all solved clues? This will allow you to solve them again.')) {
+      solvedClues.set([]);
+    }
+  }
 </script>
 
 <div class="inventory-container">
@@ -23,7 +35,7 @@
         <button class="close-btn" on:click={toggleInventory}>✕</button>
       </div>
       
-      {#if $solvedClues.length === 0}
+{#if $solvedClues.length === 0}
         <div class="empty-state">
           <p>No clues solved yet!</p>
           <p class="hint">Start solving to see your progress here.</p>
@@ -36,6 +48,9 @@
                 <span class="solved-number">#{$solvedClues.length - index}</span>
                 <span class="solved-difficulty {clue.difficulty}">{clue.difficulty}</span>
                 <span class="solved-time">{formatDate(clue.solvedAt)}</span>
+                <button class="delete-btn" on:click={() => deleteClue(index)} title="Remove and solve again">
+                  ✕
+                </button>
               </div>
               <div class="solved-clue">"{clue.clue}"</div>
               <div class="solved-answer">
@@ -44,6 +59,11 @@
               <div class="solved-type">{clue.type}</div>
             </div>
           {/each}
+        </div>
+        <div class="inventory-footer">
+          <button class="clear-all-btn" on:click={clearAll}>
+            🗑️ Clear All
+          </button>
         </div>
       {/if}
     </div>
@@ -209,9 +229,30 @@
   }
 
   .solved-time {
-    margin-left: auto;
     color: #6c757d;
     font-size: 0.8rem;
+  }
+
+  .delete-btn {
+    margin-left: auto;
+    background: white;
+    border: 1px solid #dc3545;
+    color: #dc3545;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    padding: 0;
+  }
+
+  .delete-btn:hover {
+    background: #dc3545;
+    color: white;
   }
 
   .solved-clue {
@@ -250,5 +291,28 @@
 
   .solved-list::-webkit-scrollbar-thumb:hover {
     background: #5568d3;
+  }
+
+  .inventory-footer {
+    padding: 0.75rem 1rem;
+    border-top: 1px solid #dee2e6;
+    background: white;
+  }
+
+  .clear-all-btn {
+    width: 100%;
+    padding: 0.6rem;
+    background: white;
+    border: 2px solid #dc3545;
+    color: #dc3545;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .clear-all-btn:hover {
+    background: #dc3545;
+    color: white;
   }
 </style>
