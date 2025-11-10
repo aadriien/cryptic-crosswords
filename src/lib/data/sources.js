@@ -1,7 +1,7 @@
 import { crypticClues as regularClues } from './clues.js';
 import { crypticClues as nytimesClues } from './NYTimes-clues.js';
 import { crypticClues as newyorkerClues } from './NewYorker-clues.js';
-import { crypticClues as nytimesCrosswordClues } from './NYTimesCrossword-clues.js';
+import { crypticClues as nationalpostClues } from './NationalPost-clues.js';
 
 // Centralized source configuration
 // To add a new source:
@@ -24,9 +24,9 @@ export const sources = [
     clues: newyorkerClues
   },
   {
-    id: 'nytimes-crossword',
-    label: 'NYT Crossword',
-    clues: nytimesCrosswordClues
+    id: 'nationalpost',
+    label: 'National Post',
+    clues: nationalpostClues
   }
 ];
 
