@@ -2,6 +2,7 @@ import { crypticClues as regularClues } from './clues.js';
 import { crypticClues as nytimesClues } from './NYTimes-clues.js';
 import { crypticClues as newyorkerClues } from './NewYorker-clues.js';
 import { crypticClues as nationalpostClues } from './NationalPost-clues.js';
+import { crypticClues as thetimesClues } from './TheTimes-clues.js';
 
 // Centralized source configuration
 // To add a new source:
@@ -27,6 +28,11 @@ export const sources = [
     id: 'nationalpost',
     label: 'National Post',
     clues: nationalpostClues
+  },
+  {
+    id: 'thetimes',
+    label: 'The Times',
+    clues: thetimesClues
   }
 ];
 
