@@ -15,8 +15,8 @@ setup:
 	fi
 
 # Convert JSON cryptic data exports to JS 
-injest:
-	@node src/lib/utils/injestClueData.js
+ingest:
+	@node src/lib/utils/ingestClueData.js
 
 # Run development server
 dev:
